@@ -1,0 +1,35 @@
+import styled from '@emotion/styled';
+
+export const ListItem = styled("li")`
+  padding: 20px 15px;
+  border-bottom: 1px solid #ddd;
+  list-style: none;
+  transition: ease-in-out 0.2s;
+  &:hover {
+    background-color: ${props => props.theme.colors.black};
+    color: ${props => props.theme.colors.white};
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 4px 4px 0px rgba(0,0,0,0.1);
+  }
+
+  &.active {
+    background-color: ${props => props.theme.colors.primary};
+    color: ${props => props.theme.colors.white};
+    transform: scale(1.05);
+    box-shadow: 0 4px 2px 0px rgba(0,0,0,0.1);
+  }
+`;
+
+export const ListItemText = styled.p`
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1.5;
+`;
+
+export const ListItemTitle = styled.h3`
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  line-height: 1.5;
+`;

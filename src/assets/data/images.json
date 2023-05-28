@@ -1,0 +1,39 @@
+{
+    "murals": [
+        {
+            "image": "https://imagedelivery.net/hcQsvIpWH7hvHC8R3SUteg/e957fe38-0340-47b3-4044-a8d5db575d00/public",
+            "title": "Mural 1",
+            "slug": "mural-1",
+            "artist": {
+                "name": "Artist 1",
+                "slug": "artist-1"
+            }
+        },
+        {
+            "image": "https://imagedelivery.net/hcQsvIpWH7hvHC8R3SUteg/552c6843-ffc0-4ff0-4fe7-343ea82a8d00/dynamic",
+            "title": "Mural 2",
+            "slug": "mural-2",
+            "artist": {
+                "name": "Artist 2",
+                "slug": "artist-2"
+            }
+        },
+        {
+            "image": "https://imagedelivery.net/hcQsvIpWH7hvHC8R3SUteg/50ddb5f9-81b4-402f-62d9-1876b26a3a00/dynamic",
+            "title": "Mural 3",
+            "slug": "mural-3",
+            "artist": {
+                "name": "Artist 3",
+                "slug": "artist-3"
+            }
+        },
+        {
+            "image": "https://imagedelivery.net/hcQsvIpWH7hvHC8R3SUteg/1bba7095-971f-434e-f7a4-edb02f5e3f00/dynamic",
+            "title": "Mural 4",
+            "artist": {
+                "name": "Artist 4",
+                "slug": "artist-4"
+            }
+        }
+    ]
+}
