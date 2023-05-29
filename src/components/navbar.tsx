@@ -44,6 +44,8 @@ const StyledNav = styled.nav`
   box-sizing: border-box;
   z-index: 100;
   position: absolute;
+  left: 0;
+  top: 0;
 `;
 
 const NavItem = styled(NavLink)`
