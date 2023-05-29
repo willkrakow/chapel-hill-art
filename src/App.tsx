@@ -1,10 +1,10 @@
 import router from './routes'
 import { RouterProvider } from 'react-router-dom'
 import styled from '@emotion/styled';
-import { ThemeProvider, useTheme as useEmotion, ThemeContext } from '@emotion/react'
-import {theme, darkTheme} from './utils/theme';
+import { ThemeProvider } from '@emotion/react'
+import { darkTheme} from './utils/theme';
 import './App.css';
-import { ThemeContextProvider, useTheme } from './contexts/Theme';
+import { ThemeContextProvider } from './contexts/Theme';
 
 const Container = styled.div`
   display: flex;

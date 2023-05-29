@@ -9,7 +9,7 @@ interface ArtistBioForm {
     description: string;
     image_url: string;
     website: string;
-    company_name: string;
+    company: string;
 }
 
 interface IEditArtistBio {
@@ -24,7 +24,7 @@ const EditArtistBio = ({artist}: IEditArtistBio) => {
         description: artist.description,
         image_url: artist.image_url,
         website: artist.website,
-        company_name: artist.company_name,
+        company: artist.company,
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -41,7 +41,7 @@ const EditArtistBio = ({artist}: IEditArtistBio) => {
             description: formData.description,
             image_url: formData.image_url,
             website: formData.website,
-            company: formData.company_name,
+            company: formData.company,
         };
         submit(data as any, {
             method: "POST",
@@ -76,7 +76,7 @@ const EditArtistBio = ({artist}: IEditArtistBio) => {
             <Input
                 type="text"
                 name="company_name"
-                value={formData.company_name}
+                value={formData.company}
                 onChange={handleChange}
             />
             <Button type="submit">Submit</Button>
