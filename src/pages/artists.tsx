@@ -10,18 +10,18 @@ interface ArtistLoaderData {
 const Layout = styled.div`
   display: flex;
   gap: 20px;
-  margin-top: 60px;
-  padding-top: 20px;
-  padding: 10px;
   flex-wrap: wrap;
+  align-items: flex-start;
+  min-height: 100vh;
 `
 
 const Sidebar = styled.aside`
   grid-column: span 1;
   display: flex;
   flex-direction: column;
-  flex-basis: 200px;
-  flex: 1 0 200px;
+  flex-basis: 100px;
+  flex: 1 0 100px;
+  margin-top: 20px;
 `;
 
 
@@ -29,9 +29,9 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   padding: 20px;
-  flex-basis: 400px;
-  flex: 1 0 400px;
-
+  flex-basis: 350px;
+  flex: 2 0 350px;
+  height: 100%;
 `
 const Artists = () => {
   const artists = useLoaderData() as ArtistLoaderData;

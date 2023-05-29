@@ -7,8 +7,9 @@ const Address = styled.address`
   line-height: 1.675;
   margin: 0;
   padding: 0;
+  text-align: right;
+  color: ${props => props.theme.colors.grey};
   font-family: "Bodoni Moda", serif;
-  font-weight: 'bold';
 `;
 
 export default Address;

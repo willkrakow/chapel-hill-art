@@ -5,8 +5,10 @@ const Button = styled.button`
     padding: 10px;
     box-sizing: border-box;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 1px;
     font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     background-color: #fff;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;

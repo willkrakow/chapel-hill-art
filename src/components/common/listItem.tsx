@@ -2,13 +2,16 @@ import styled from '@emotion/styled';
 
 export const ListItem = styled("li")`
   padding: 20px 15px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid ${props => props.theme.colors.grey};
+  color: ${props => props.theme.colors.black};
   list-style: none;
   transition: ease-in-out 0.2s;
+  font-family: ${props => props.theme.fonts.body};
   &:hover {
     background-color: ${props => props.theme.colors.black};
     color: ${props => props.theme.colors.white};
     transform: scale(1.05) translateY(-2px);
+    transform-origin: 0 0;
     box-shadow: 0 4px 4px 0px rgba(0,0,0,0.1);
   }
 
@@ -25,6 +28,7 @@ export const ListItemText = styled.p`
   padding: 0;
   font-size: 16px;
   line-height: 1.5;
+  color: ${props => props.theme.colors.black};
 `;
 
 export const ListItemTitle = styled.h3`
@@ -32,4 +36,6 @@ export const ListItemTitle = styled.h3`
   padding: 0;
   font-size: 20px;
   line-height: 1.5;
+  font-family: ${props => props.theme.fonts.body};
+  color: ${props => props.theme.colors.white};
 `;

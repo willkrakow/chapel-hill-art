@@ -1,9 +1,16 @@
 import { useLoaderData } from "react-router-dom";
 import { IArtist } from '../types/artists';
 import H2 from "../components/common/h2";
-import Button from "../components/common/button";
-import H3 from "../components/common/h3";
 import P from "../components/common/p";
+import H4 from "../components/common/h4";
+import styled from "@emotion/styled";
+
+
+const Header = styled.header`
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+`
 
 const Artist = () => {
     const {data} = useLoaderData() as {data: IArtist}
@@ -14,15 +21,14 @@ const Artist = () => {
 
     return (
       <div>
-        <H2>
-          {data.first_name} {data.last_name}
-        </H2>
-        <H3>{data.company}</H3>
-        <a href={data.website}>
-          <Button>
-            Website
-          </Button>
-        </a>
+        <Header>
+          <H2>
+            {data.first_name} {data.last_name}
+          </H2>
+          <a href={data.website}>
+            <H4>{data.company}</H4>
+          </a>
+        </Header>
         <P>{data.bio}</P>
       </div>
     );

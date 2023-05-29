@@ -9,6 +9,7 @@ import Admin from "../components/admin";
 import AdminMurals from "../components/admin/murals";
 import AdminArtists from "../components/admin/artists";
 import styled from '@emotion/styled';
+import About from "../pages/about";
 
 const Container = styled.div`
     display: grid;
@@ -25,6 +26,8 @@ const ContentContainer = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-top: 60px;
+    padding: 0 10px;
 `;
 
 const Layout = () => {
@@ -65,6 +68,10 @@ const routes: RouteObject[] = [
             },
           },
         ],
+      },
+      {
+        path: "/about",
+        element: <About />,
       },
       {
         path: "/admin",

@@ -1,9 +1,10 @@
 import router from './routes'
 import { RouterProvider } from 'react-router-dom'
 import styled from '@emotion/styled';
-import { ThemeProvider } from '@emotion/react'
-import theme from './utils/theme';
+import { ThemeProvider, useTheme as useEmotion, ThemeContext } from '@emotion/react'
+import {theme, darkTheme} from './utils/theme';
 import './App.css';
+import { ThemeContextProvider, useTheme } from './contexts/Theme';
 
 const Container = styled.div`
   display: flex;
@@ -13,14 +14,26 @@ const Container = styled.div`
   width: 100%;
   margin: auto;
   font-family: 'Roboto', sans-serif;
+  background-color: ${props => props.theme.colors.background};
 `;
+
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-    <Container>
-      <RouterProvider router={router} />
-    </Container>
-    </ThemeProvider>
+    <AppWrapper>
+      <ThemeProvider theme={darkTheme}>
+        <Container>
+          <RouterProvider router={router} />
+        </Container>
+      </ThemeProvider>
+    </AppWrapper>
+  );
+}
+
+function AppWrapper({children}: {children: React.ReactNode}){
+  return (
+    <ThemeContextProvider>
+      {children}
+    </ThemeContextProvider>
   )
 }
 
