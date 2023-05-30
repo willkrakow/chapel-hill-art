@@ -10,6 +10,7 @@ import AdminMurals from "../components/admin/murals";
 import AdminArtists from "../components/admin/artists";
 import styled from '@emotion/styled';
 import About from "../pages/about";
+import Map from "../pages/map";
 
 const Container = styled.div`
     display: grid;
@@ -72,6 +73,10 @@ const routes: RouteObject[] = [
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/map",
+        element: <Map />
       },
       {
         path: "/admin",

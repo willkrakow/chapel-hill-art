@@ -5,6 +5,7 @@ import { ThemeProvider } from '@emotion/react'
 import { darkTheme} from './utils/theme';
 import './App.css';
 import { ThemeContextProvider } from './contexts/Theme';
+import "mapbox-gl/dist/mapbox-gl.css";
 
 const Container = styled.div`
   display: flex;
