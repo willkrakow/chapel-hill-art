@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "npx wrangler pages dev --d1=MURALS_DB --local --persist -- vite",
-    "build": "tsc && vite build && cp -r functions dist/",
+    "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "deploy": "npm run build && npx wrangler pages publish --project-name chapel-hill-murals ./dist"
