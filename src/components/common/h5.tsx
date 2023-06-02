@@ -5,7 +5,7 @@ const H5 = styled.h5`
   padding: 0;
   font-size: ${(props) => props.theme.fontSizes.h5};
   font-weight: 500;
-  font-family: ${(props) => props.theme.fonts.body};
+  font-family: ${(props) => props.theme.fonts.heading};
   color: ${(props) => props.theme.colors.black};
   line-height: 1.675;
 `;
