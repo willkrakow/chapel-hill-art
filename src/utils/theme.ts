@@ -40,7 +40,7 @@ export const darkTheme: Theme = {
     },
     fonts: {
         body: `'Bodoni Moda', serif`,
-        heading: `'Space Grotesk', sans-serif`,
+        heading: `'Caveat', sans-serif`,
     },
     fontSizes: {
         body: '1rem',

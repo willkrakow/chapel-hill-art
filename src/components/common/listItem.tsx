@@ -1,18 +1,23 @@
 import styled from '@emotion/styled';
 
-export const ListItem = styled("li")`
+export const ListItem = styled("li")<{cursor?: boolean}>`
   padding: 20px 15px;
   border-bottom: 1px solid ${props => props.theme.colors.grey};
   color: ${props => props.theme.colors.black};
   list-style: none;
   transition: ease-in-out 0.2s;
   font-family: ${props => props.theme.fonts.body};
+  cursor: ${props => props.cursor ? 'pointer' : 'default'};
   &:hover {
     background-color: ${props => props.theme.colors.black};
     color: ${props => props.theme.colors.white};
     transform: scale(1.05) translateY(-2px);
     transform-origin: 0 0;
     box-shadow: 0 4px 4px 0px rgba(0,0,0,0.1);
+
+    & > * {
+      color: ${props => props.theme.colors.white};
+    }
   }
 
   &.active {

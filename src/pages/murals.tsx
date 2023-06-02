@@ -6,16 +6,17 @@ import Address from '../components/common/address';
 import H4 from '../components/common/h4';
 
 const Grid = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    box-sizing: border-box;
-    width: 100%;
-    height: calc(100vh - 120px);
-    overflow-y: scroll;
-    max-width: 1200px;
-    margin: 0 auto;
-    scroll-snap-type: y mandatory;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  height: calc(100vh - 120px);
+  height: calc(100svh - 120px);
+  overflow-y: scroll;
+  max-width: 1200px;
+  margin: 0 auto;
+  scroll-snap-type: y mandatory;
 `;
 
 const Section = styled.section`
@@ -24,6 +25,8 @@ const Section = styled.section`
   grid-template-rows: minmax(100px, 500px);
   max-height: calc(100vh - 120px);
   min-height: calc(100vh - 120px);
+  max-height: calc(100svh - 120px);
+  min-height: calc(100svh - 120px);
   width: fit-content;
   max-width: 100%;
   margin: 10px auto;
