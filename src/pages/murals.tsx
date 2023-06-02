@@ -11,7 +11,7 @@ const Grid = styled.div`
     gap: 20px;
     box-sizing: border-box;
     width: 100%;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 120px);
     overflow-y: scroll;
     max-width: 1200px;
     margin: 0 auto;
@@ -22,12 +22,12 @@ const Section = styled.section`
   display: grid;
   gap: 10px;
   grid-template-rows: minmax(100px, 500px);
-  max-height: calc(100vh - 60px);
-  min-height: calc(100vh - 60px);
+  max-height: calc(100vh - 120px);
+  min-height: calc(100vh - 120px);
   width: fit-content;
   max-width: 100%;
   margin: 10px auto;
-  padding: 40px 0;
+  padding: 60px 0;
   scroll-snap-align: start;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;

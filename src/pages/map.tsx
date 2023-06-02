@@ -7,7 +7,6 @@ import List from "../components/common/list";
 import { ListItem, ListItemText } from "../components/common/listItem";
 import { MapContext } from "../contexts/Map";
 import MapService from "../services/Maps";
-import Button from "../components/common/button";
 
 const Container = styled.div`
   min-height: 60vh;
@@ -95,15 +94,10 @@ const MapPage = () => {
                 const isActive = currentMural?.id === mural.id;
                 const className = isActive ? "active" : undefined;
                 return (
-                  <ListItem className={className} key={mural.id}>
+                  <ListItem className={className} key={mural.id} onClick={handleMoveCamera(mural)}>
                     <ListItemText className={className}>
                       {mural.title}
                     </ListItemText>
-                    {!isActive && (
-                      <Button onClick={handleMoveCamera(mural)}>
-                        Directions
-                      </Button>
-                    )}
                   </ListItem>
                 );
               })}
