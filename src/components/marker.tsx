@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { useMap } from "../contexts/Map"
+import useMap from "../hooks/useMap"
 import mapboxgl from "mapbox-gl";
 import styled from "@emotion/styled";
 
@@ -36,6 +36,10 @@ const MapMarker = (props: MapMarkerProps) => {
         marker.addTo(map!);
       });
     }, [map, markerRef.current]);
+
+    useEffect(() => {
+        return () => markerRef?.current?.remove();
+    }, [])
 
     const handleClick = () => {
       map?.flyTo({

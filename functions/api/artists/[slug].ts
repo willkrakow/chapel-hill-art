@@ -9,14 +9,9 @@ export const onRequest: PagesFunction<Env> = async (context) => {
         case "GET":
             console.log(context.params.slug)
             const artists = context.env.MURALS_DB.prepare(getArtistBySlug).bind(context.params.slug)
-            const results = await artists.first()
-            return new Response(JSON.stringify({
-                data: results
-            }), { status: 200 })
+            const data = await artists.first()
+            return new Response(JSON.stringify({ data }), { status: 200 })
         default:
-            const error = {
-                error: "Method not allowed"
-            }
-            return new Response(JSON.stringify(error), { status: 405 })
+            return new Response(JSON.stringify({ error: "Method not allowed" }), { status: 405 })
     }
 }

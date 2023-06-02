@@ -47,6 +47,7 @@ const routes: RouteObject[] = [
     path: "/",
     Component: Layout,
     id: "root",
+    loader: MuralsService.getAll,
     children: [
       {
         index: true,
@@ -76,7 +77,8 @@ const routes: RouteObject[] = [
       },
       {
         path: "/map",
-        element: <Map />
+        id: "map",
+        element: <Map />,
       },
       {
         path: "/admin",
