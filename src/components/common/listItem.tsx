@@ -29,6 +29,9 @@ export const ListItemText = styled.p`
   font-size: 16px;
   line-height: 1.5;
   color: ${props => props.theme.colors.black};
+  &.active {
+    color: ${props => props.theme.colors.white};
+  }
 `;
 
 export const ListItemTitle = styled.h3`

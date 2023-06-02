@@ -4,7 +4,9 @@
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "module": "ESNext",
     "skipLibCheck": true,
-
+    "esModuleInterop": true,
+    "maxNodeModuleJsDepth": 2,
+    "allowJs": true,
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
@@ -14,6 +16,8 @@
     "jsx": "react-jsx",
 
     /* Linting */
+    "allowSyntheticDefaultImports": true,
+    "resolvePackageJsonExports": true,
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -22,5 +26,7 @@
   },
   "include": ["src"],
   "exclude": ["functions/**/*"],
+  "typeAcquisition": {
+    "include": ["@turf/turf"]},
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -14,8 +14,6 @@ interface IMural {
     image_url: string;
 }
 
-const createMuralsTable = `CREATE TABLE IF NOT EXISTS murals (id INTEGER PRIMARY KEY, address1 TEXT, address2 TEXT, city TEXT, state TEXT, zip INTEGER, title TEXT, artist_id INTEGER, image_url TEXT)`
-const insertMural = `INSERT INTO murals (id, address1, address2, city, state, zip, title, artist_id, image_url) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 const getMurals = `SELECT
     murals.id as id,
     murals.address1,
@@ -35,24 +33,12 @@ LEFT JOIN artists
     ON murals.artist_id = artists.id`;
 
 export const onRequest: PagesFunction<Env> = async (context) => {
-    const s = context.env.MURALS_DB.prepare(createMuralsTable);
-    await s.run();
-
     switch (context.request.method) {
         case "GET":
             const artists = context.env.MURALS_DB.prepare(getMurals)
             const results = await artists.all()
             return new Response(JSON.stringify({
                 data: results.results
-            }), { status: 200 })
-        case "POST":
-            const body = await context.request.json<IMural>()
-            const insert = context.env.MURALS_DB.prepare(insertMural)
-            const prepared = insert.bind(body.id, body.address1, body.address2, body.city, body.state, body.zip, body.title, body.artist_id, body.image_url)
-            const result = await prepared.run()
-
-            return new Response(JSON.stringify({
-                data: result.results
             }), { status: 200 })
         default:
             const error = {
