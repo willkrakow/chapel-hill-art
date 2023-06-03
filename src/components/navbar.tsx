@@ -56,23 +56,58 @@ const NavItem = styled(NavLink)`
   height: 100%;
   padding: 0 10px;
   box-sizing: border-box;
-  font-size: ${props => props.theme.fontSizes.body};
+  font-size: ${(props) => props.theme.fontSizes.h5};
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-weight: 500;
-  color: ${props => props.theme.colors.primary};
+  font-weight: 600;
+  color: ${(props) => props.theme.colors.primary};
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  font-family: ${props => props.theme.fonts.body};
+  font-family: ${(props) => props.theme.fonts.heading};
   grid-column: span 4;
   text-decoration: none;
+  letter-spacing: 2px;
   &:hover {
-    background-color: ${props => props.theme.colors.primary};
-    color: ${props => props.theme.colors.white};
+    background: linear-gradient(
+      to right,
+      hsl(0, 100%, 50%, 0.9),
+      hsl(30, 100%, 50%, 0.9),
+      hsl(60, 100%, 50%, 0.9),
+      hsl(90, 100%, 40%, 0.9),
+      hsl(120, 100%, 40%, 0.9),
+      hsl(150, 100%, 60%, 0.9),
+      hsl(180, 100%, 60%, 0.9),
+      hsl(210, 100%, 70%, 0.9),
+      hsl(240, 100%, 70%, 0.9),
+      hsl(270, 100%, 70%, 1),
+      hsl(300, 100%, 70%, 1),
+      hsl(330, 100%, 60%, 1),
+      hsl(360, 100%, 60%, 0.9)
+    );
+    border-bottom: 2px solid ${(props) => props.theme.colors.black};
+    color: transparent;
+    -webkit-background-clip: text;
   }
   &.active {
-    background-color: ${props => props.theme.colors.primary};
-    color: ${props => props.theme.colors.white};
+    background: linear-gradient(
+      to right,
+      hsl(0, 100%, 50%, 0.9),
+      hsl(30, 100%, 50%, 0.9),
+      hsl(60, 100%, 50%, 0.9),
+      hsl(90, 100%, 40%, 0.9),
+      hsl(120, 100%, 40%, 0.9),
+      hsl(150, 100%, 60%, 0.9),
+      hsl(180, 100%, 60%, 0.9),
+      hsl(210, 100%, 70%, 0.9),
+      hsl(240, 100%, 70%, 0.9),
+      hsl(270, 100%, 70%, 1),
+      hsl(300, 100%, 70%, 1),
+      hsl(330, 100%, 60%, 1),
+      hsl(360, 100%, 60%, 0.9)
+    );
+    border-bottom: 2px solid ${(props) => props.theme.colors.black};
+    color: transparent;
+    -webkit-background-clip: text;
   }
 `;
 
