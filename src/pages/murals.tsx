@@ -4,44 +4,36 @@ import { IMuralJoined } from '../types/murals';
 import H5 from '../components/common/h5';
 import Address from '../components/common/address';
 import H4 from '../components/common/h4';
+import { HopeModel } from '../components/models/hope';
+import { TOPOModel } from '../components/models/topo';
+import { FloydCouncilModel } from '../components/models/floydcouncil';
+import { AATraillBlazersModel } from '../components/models/aatrlblzrs';
+import { GourmetKingdomModel } from '../components/models/gourmet';
+import Dimensions from '../components/dimensions';
 
 const Grid = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  box-sizing: border-box;
   width: 100%;
-  height: calc(100vh - 120px);
-  height: calc(100svh - 120px);
-  overflow-y: scroll;
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
-  scroll-snap-type: y mandatory;
 `;
 
 const Section = styled.section`
   display: grid;
+  overflow: hidden;
   gap: 10px;
-  grid-template-rows: minmax(100px, 500px);
-  max-height: calc(100vh - 120px);
-  min-height: calc(100vh - 120px);
-  max-height: calc(100svh - 120px);
-  min-height: calc(100svh - 120px);
+  grid-template-rows: 70vh 20vh;
   width: fit-content;
   max-width: 100%;
   margin: 10px auto;
   padding: 60px 0;
-  scroll-snap-align: start;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
 `;
 
 const ImageContainer = styled.div`
-    max-width: 100%;
     grid-row: span 1;
-    display: flex;
-    justify-content: center;
-    box-shadow: ${props => props.theme.shadows.large};
+    overflow: hidden;
 `
 
 const TextContainer = styled.div`
@@ -60,23 +52,34 @@ const AddressContainer = styled.div`
   flex: 1 0 150px;
 `;
 
-const Image = styled.img`
-max-width: 100%;
-object-fit: cover;
-`;
-
 interface MuralsLoaderData {
   data: IMuralJoined[];
 }
 
+const renderMuralMapping = {
+  6: HopeModel,
+  10: TOPOModel,
+  11: FloydCouncilModel,
+  12: AATraillBlazersModel,
+  1: GourmetKingdomModel,
+}
+
 const Murals = () => {
   const murals = useLoaderData() as MuralsLoaderData;
+
+  const withRenders = murals.data.map((mural) => {
+    const RenderComponent = renderMuralMapping[mural.id as keyof typeof renderMuralMapping];
+    return {
+      ...mural,
+      ThreeDModel: RenderComponent as React.FC | undefined,
+    }
+  });
     return (
       <Grid>
-        {murals.data.map((mural) => (
+        {withRenders.map((mural) => (
           <Section key={mural.id}>
-            <ImageContainer key={mural.id}>
-              <Image srcSet={createSrcSet(mural.image_url)} src={`${mural.image_url}`} alt={mural.title} />
+            <ImageContainer>
+              <Dimensions mural={mural} />
             </ImageContainer>
             <TextContainer>
               <MuralDetails>
@@ -102,15 +105,6 @@ const Murals = () => {
         ))}
       </Grid>
     );
-}
-
-function createSrcSet(imageUrl: string){
-  const imageWidths = [320, 480, 800, 1200, 1600];
-  const srcSet = imageWidths.map((width) => {
-    return `${imageUrl.replace('dynamic', `w=${width},sharpen=3 ${width}w`)}`;
-  });
-
-  return srcSet.join(', ');
 }
 
 export default Murals

@@ -5,7 +5,7 @@
     "module": "ESNext",
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "maxNodeModuleJsDepth": 2,
+    "maxNodeModuleJsDepth": 3,
     "allowJs": true,
     /* Bundler mode */
     "moduleResolution": "bundler",

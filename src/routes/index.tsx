@@ -11,6 +11,7 @@ import AdminArtists from "../components/admin/artists";
 import styled from '@emotion/styled';
 import About from "../pages/about";
 import Map from "../pages/map";
+import Renders from "../pages/renders";
 
 const Container = styled.div`
     display: grid;
@@ -79,6 +80,11 @@ const routes: RouteObject[] = [
         path: "/map",
         id: "map",
         element: <Map />,
+      },
+      {
+        path: "/renders",
+        id: "renders",
+        element: <Renders />
       },
       {
         path: "/admin",

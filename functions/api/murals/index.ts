@@ -1,17 +1,6 @@
 interface Env {
-    MURALS_DB: D1Database
-}
-
-interface IMural {
-    id: number;
-    address1: string;
-    address2: string;
-    city: string;
-    state: string;
-    zip: number;
-    title: string;
-    artist_id: number | null;
-    image_url: string;
+    MURALS_DB: D1Database;
+    R2_RENDERS: R2Bucket;
 }
 
 const getMurals = `SELECT

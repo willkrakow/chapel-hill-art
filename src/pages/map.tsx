@@ -7,6 +7,7 @@ import List from "../components/common/list";
 import { ListItem, ListItemText } from "../components/common/listItem";
 import { MapContext } from "../contexts/Map";
 import MapService from "../services/Maps";
+import "./threebox.css";
 
 const Container = styled.div`
   min-height: 60vh;
@@ -14,16 +15,18 @@ const Container = styled.div`
   height: 100%;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   padding: 20px;
+  gap: 20px;
 `;
 
 const DataContainer = styled.div`
   height: 100%;
-  flex: 1 0 200px;
+  flex: 1 1 200px;
 `;
 
 const MapContainer = styled.div`
-  flex: 1 0 500px;
+  flex: 1 1 500px;
   height: 100%;
   max-height: calc(100vh - 100px);
 `;
@@ -50,26 +53,17 @@ const MapPage = () => {
       // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
       style: import.meta.env.VITE_MAPBOX_STYLE,
       accessToken: import.meta.env.VITE_MAPBOX_TOKEN,
+      optimizeForTerrain: true,
+      maxBounds: [-80, 35, -78, 36],
     });
-
-    console.log(import.meta.env.VITE_MAPBOX_STYLE);
-
+    
     setMap(m);
-
     return () => {
-      m.remove();
+        m.remove();
     };
   }, []);
 
-  const getMuralDetails = async (mural: IMuralJoined) => {
-    const muralAddress = `${mural.address1} ${mural.city}, ${mural.state} ${mural.zip}`;
-
-    const selectedMuralData = await MapService.getCoords(muralAddress);
-    return {
-        ...mural,
-        coords: selectedMuralData.data.features[0].center,
-    }
-  };
+  
 
   const handleMoveCamera = (mural?: IMuralJoined) => async () => {
     if (!map || !mural) return;
@@ -94,7 +88,7 @@ const MapPage = () => {
                 const isActive = currentMural?.id === mural.id;
                 const className = isActive ? "active" : undefined;
                 return (
-                  <ListItem className={className} key={mural.id} onClick={handleMoveCamera(mural)}>
+                  <ListItem cursor className={className} key={mural.id} onClick={handleMoveCamera(mural)}>
                     <ListItemText className={className}>
                       {mural.title}
                     </ListItemText>
@@ -110,3 +104,14 @@ const MapPage = () => {
 };
 
 export default MapPage;
+
+
+async function getMuralDetails(mural: IMuralJoined){
+  const muralAddress = `${mural.address1} ${mural.city}, ${mural.state} ${mural.zip}`;
+
+  const selectedMuralData = await MapService.getCoords(muralAddress);
+  return {
+    ...mural,
+    coords: selectedMuralData.data.features[0].center,
+  };
+};
