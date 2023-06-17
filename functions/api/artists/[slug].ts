@@ -1,5 +1,6 @@
 interface Env {
-    MURALS_DB: D1Database
+    MURALS_DB: D1Database;
+    R2_RENDERS: R2Bucket;
 }
 
 const getArtistBySlug = `SELECT * FROM artists WHERE slug = ?`;

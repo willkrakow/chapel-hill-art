@@ -1,5 +1,6 @@
 interface Env {
-    MURALS_DB: D1Database
+    MURALS_DB: D1Database;
+    R2_RENDERS: R2Bucket;
 }
 
 const getArtists = `SELECT * FROM artists LEFT JOIN bios ON artists.id = bios.artist_id`;
