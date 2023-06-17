@@ -24,7 +24,7 @@ const Section = styled.section`
   display: grid;
   overflow: hidden;
   gap: 10px;
-  grid-template-rows: 50vh 20vh;
+  grid-template-rows: 70vh 20vh;
   width: fit-content;
   max-width: 100%;
   margin: 10px auto;

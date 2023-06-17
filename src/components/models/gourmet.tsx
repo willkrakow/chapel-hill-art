@@ -15,7 +15,7 @@ type GLTFResult = GLTF & {
 };
 
 export function GourmetKingdomModel(props: JSX.IntrinsicElements["group"]) {
-  const { nodes } = useGLTF(
+  const { nodes, materials } = useGLTF(
     "/GOURMET KINGDOM-transformed.glb"
   ) as GLTFResult;
   return (

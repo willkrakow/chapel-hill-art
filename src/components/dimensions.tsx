@@ -13,6 +13,7 @@ const ToggleContainer = styled.div`
 `
 
 const Image = styled.img`
+width: 100%;
 `;
 
 
@@ -54,7 +55,7 @@ const Dimensions = ({mural}: Props) => {
           <Canvas
             style={{
               width: (containerRef?.current?.clientWidth || 50) - 50,
-              height: "50vh",
+              height: "70vh",
             }}
           >
             <CameraControls />
