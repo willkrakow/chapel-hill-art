@@ -15,7 +15,7 @@ type GLTFResult = GLTF & {
 };
 
 export function AATraillBlazersModel(props: JSX.IntrinsicElements["group"]) {
-  const { nodes, materials } = useGLTF("/AATRLBLZRS GLTF-transformed.glb") as GLTFResult;
+  const { nodes } = useGLTF("/AATRLBLZRS GLTF-transformed.glb") as GLTFResult;
   return (
     <group {...props} dispose={null}>
       <ambientLight position={[10, 10, 5]} intensity={2} castShadow />
