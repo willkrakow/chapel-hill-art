@@ -4,12 +4,12 @@ import { IMuralJoined } from '../types/murals';
 import H5 from '../components/common/h5';
 import Address from '../components/common/address';
 import H4 from '../components/common/h4';
-import { HopeModel } from '../components/models/hope';
-import { TOPOModel } from '../components/models/topo';
+import { HopeModel } from '../components/models/HopeGLTF';
 import { FloydCouncilModel } from '../components/models/floydcouncil';
 import { AATraillBlazersModel } from '../components/models/aatrlblzrs';
-import { GourmetKingdomModel } from '../components/models/gourmet';
+import { KingdomModel } from '../components/models/KingdomGLTF';
 import Dimensions from '../components/dimensions';
+import { TOPOModel } from '../components/models/TOPO';
 
 const Grid = styled.div`
   display: flex;
@@ -21,27 +21,22 @@ const Grid = styled.div`
 `;
 
 const Section = styled.section`
-  display: grid;
-  overflow: hidden;
-  gap: 10px;
-  grid-template-rows: 70vh 20vh;
-  width: fit-content;
-  max-width: 100%;
-  margin: 10px auto;
-  padding: 60px 0;
+  display: flex;
+  flex-direction: column;
+  height: 90svh;
+  place-content: center;
 `;
 
 const ImageContainer = styled.div`
-    grid-row: span 1;
     overflow: hidden;
 `
 
 const TextContainer = styled.div`
-    grid-row: span 1;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     flex-wrap: wrap;
+    width: 100%;
 `
 
 const MuralDetails = styled.div`
@@ -61,7 +56,7 @@ const renderMuralMapping = {
   10: TOPOModel,
   11: FloydCouncilModel,
   12: AATraillBlazersModel,
-  1: GourmetKingdomModel,
+  1: KingdomModel,
 }
 
 const Murals = () => {

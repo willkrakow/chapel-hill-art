@@ -68,7 +68,7 @@ const MapPage = () => {
   const handleMoveCamera = (mural?: IMuralJoined) => async () => {
     if (!map || !mural) return;
     const mapData = await getMuralDetails(mural);
-    console.log(mapData.coords);
+
     map.flyTo({
       center: mapData.coords,
       zoom: 19,
@@ -76,6 +76,8 @@ const MapPage = () => {
       pitch: 85,
     });
     setCurrentMural(mapData);
+    // Scroll down to containerRef
+    containerRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
