@@ -14,6 +14,8 @@ const ToggleContainer = styled.div`
 
 const Image = styled.img`
 width: 100%;
+min-height: 60vh;
+object-fit: cover;
 `;
 
 
@@ -54,10 +56,11 @@ const Dimensions = ({mural}: Props) => {
         {currentDimension === 3 && mural.ThreeDModel && (
           <Canvas
             style={{
-              width: (containerRef?.current?.clientWidth || 50) - 50,
-              height: "70vh",
+              width: "100%",
+              height: "70svh",
             }}
           >
+            <ambientLight castShadow intensity={0.7} position={[10, 10, 5]} />
             <CameraControls />
             <mural.ThreeDModel />
           </Canvas>

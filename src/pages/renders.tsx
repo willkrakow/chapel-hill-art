@@ -1,8 +1,8 @@
 import { Canvas, Vector3 } from "@react-three/fiber";
 import { AATraillBlazersModel } from "../components/models/aatrlblzrs";
 import { FloydCouncilModel } from "../components/models/floydcouncil";
-import { TOPOModel } from "../components/models/topo";
-import { HopeModel } from "../components/models/hope";
+import { TOPOModel } from "../components/models/TOPO";
+import { HopeModel } from "../components/models/HopeGLTF";
 import styled from '@emotion/styled';
 
 
