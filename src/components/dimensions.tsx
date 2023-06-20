@@ -60,7 +60,6 @@ const Dimensions = ({mural}: Props) => {
               height: "70svh",
             }}
           >
-            <ambientLight castShadow intensity={0.7} position={[10, 10, 5]} />
             <CameraControls />
             <mural.ThreeDModel />
           </Canvas>

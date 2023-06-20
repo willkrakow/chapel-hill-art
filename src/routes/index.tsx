@@ -5,9 +5,6 @@ import Artists from "../pages/artists";
 import Artist from "../pages/artist";
 import MuralsService from '../services/Murals';
 import ArtistsService from '../services/Artists';
-import Admin from "../components/admin";
-import AdminMurals from "../components/admin/murals";
-import AdminArtists from "../components/admin/artists";
 import styled from '@emotion/styled';
 import About from "../pages/about";
 import Map from "../pages/map";
@@ -85,45 +82,6 @@ const routes: RouteObject[] = [
         path: "/renders",
         id: "renders",
         element: <Renders />
-      },
-      {
-        path: "/admin",
-        element: <Admin />,
-        children: [
-          {
-            index: true,
-            element: <h1>Admin Home</h1>,
-          },
-          {
-            path: "/admin/murals",
-            element: <AdminMurals />,
-            loader: MuralsService.getAll,
-            action: async ({ request }) => {
-              const formData = await request.formData();
-              const data = Object.fromEntries(formData.entries());
-              return MuralsService.create(data as any);
-            },
-          },
-          {
-            path: "/admin/artists",
-            element: <AdminArtists />,
-            loader: ArtistsService.getAll,
-            action: async ({ request }) => {
-              const formData = await request.formData();
-              const data = Object.fromEntries(formData.entries());
-              return ArtistsService.create(data as any);
-            },
-          },
-          {
-            path: "/admin/artist-bios",
-            element: <h1>Artist Bios</h1>,
-            action: async ({ request }) => {
-              const formData = await request.formData();
-              const data = Object.fromEntries(formData.entries());
-              return ArtistsService.createBio(data as any);
-            },
-          },
-        ],
       },
     ],
   },

@@ -33,6 +33,8 @@ const Content = styled.div`
   flex: 2 0 350px;
   height: 100%;
 `
+
+const UNKNOWN_ARTIST_ID = 3;
 const Artists = () => {
   const artists = useLoaderData() as ArtistLoaderData;
   const params = useParams<{slug: string}>();
@@ -41,7 +43,9 @@ const Artists = () => {
       <Layout>
         <Sidebar>
           <List>
-            {artists.data.map((artist) => (
+            {artists.data
+              .filter(a => a.id !== UNKNOWN_ARTIST_ID)
+              .map((artist) => (
                 <Link key={artist.slug} to={`/artists/${artist.slug}`}>
                   <ListItem className={params.slug === artist.slug ? "active" : undefined} key={artist.slug}>
                   {artist.first_name} {artist.last_name}
