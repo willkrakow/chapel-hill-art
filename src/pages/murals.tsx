@@ -16,17 +16,17 @@ import { BobsModel } from '../components/models/BOBS';
 const Grid = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 100px;
   width: 100%;
   max-width: 900px;
-  margin: 0 auto;
+  margin: 30px auto;
 `;
 
 const Section = styled.section`
   display: flex;
   flex-direction: column;
-  height: 90svh;
-  place-content: center;
+  max-height: 90svh;
+  height: 100%;
 `;
 
 const ImageContainer = styled.div`

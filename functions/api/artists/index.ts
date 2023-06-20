@@ -3,7 +3,7 @@ interface Env {
     R2_RENDERS: R2Bucket;
 }
 
-const getArtists = `SELECT * FROM artists LEFT JOIN bios ON artists.id = bios.artist_id`;
+const getArtists = `SELECT * FROM artists`;
 
 export const onRequest: PagesFunction<Env> = async (context) => {
     switch (context.request.method) {

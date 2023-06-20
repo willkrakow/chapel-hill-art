@@ -28,10 +28,9 @@ const Sidebar = styled.aside`
 const Content = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding:  40px 20px;
   flex-basis: 350px;
   flex: 2 0 350px;
-  height: 100%;
 `
 
 const UNKNOWN_ARTIST_ID = 3;
