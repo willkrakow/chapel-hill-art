@@ -6,12 +6,14 @@ import Address from '../components/common/address';
 import H4 from '../components/common/h4';
 import { HopeModel } from '../components/models/HopeGLTF';
 import { FloydCouncilModel } from '../components/models/FloydCouncil';
-import { AATraillBlazersModel } from '../components/models/aatrlblzrs';
+import { TraillBlazersModel } from '../components/models/TrailBlazers';
 import { KingdomModel } from '../components/models/KingdomGLTF';
 import Dimensions from '../components/dimensions';
 import { TOPOModel } from '../components/models/TOPO';
 import { HandsModel } from '../components/models/HANDS';
 import { BobsModel } from '../components/models/BOBS';
+import { GreenFlowersModel } from '../components/models/GreenFlowers';
+import { LoveWinsModel } from '../components/models/LoveWins';
 
 const Grid = styled.div`
   display: flex;
@@ -50,14 +52,16 @@ interface MuralsLoaderData {
 }
 
 const renderMuralMapping = {
+  1: KingdomModel,
   6: HopeModel,
+  7: HandsModel,
+  8: GreenFlowersModel,
   10: TOPOModel,
   11: FloydCouncilModel,
-  12: AATraillBlazersModel,
-  1: KingdomModel,
-  7: HandsModel,
+  12: TraillBlazersModel,
   13: BobsModel,
-}
+  14: LoveWinsModel,
+};
 
 const Murals = () => {
   const murals = useLoaderData() as MuralsLoaderData;
