@@ -5,26 +5,28 @@ import H5 from '../components/common/h5';
 import Address from '../components/common/address';
 import H4 from '../components/common/h4';
 import { HopeModel } from '../components/models/HopeGLTF';
-import { FloydCouncilModel } from '../components/models/floydcouncil';
+import { FloydCouncilModel } from '../components/models/FloydCouncil';
 import { AATraillBlazersModel } from '../components/models/aatrlblzrs';
 import { KingdomModel } from '../components/models/KingdomGLTF';
 import Dimensions from '../components/dimensions';
 import { TOPOModel } from '../components/models/TOPO';
+import { HandsModel } from '../components/models/HANDS';
+import { BobsModel } from '../components/models/BOBS';
 
 const Grid = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 100px;
   width: 100%;
   max-width: 900px;
-  margin: 0 auto;
+  margin: 30px auto;
 `;
 
 const Section = styled.section`
   display: flex;
   flex-direction: column;
-  height: 90svh;
-  place-content: center;
+  max-height: 90svh;
+  height: 100%;
 `;
 
 const ImageContainer = styled.div`
@@ -37,10 +39,6 @@ const TextContainer = styled.div`
     align-items: flex-end;
     flex-wrap: wrap;
     width: 100%;
-`
-
-const MuralDetails = styled.div`
-
 `
 
 const AddressContainer = styled.div`
@@ -57,6 +55,8 @@ const renderMuralMapping = {
   11: FloydCouncilModel,
   12: AATraillBlazersModel,
   1: KingdomModel,
+  7: HandsModel,
+  13: BobsModel,
 }
 
 const Murals = () => {
@@ -77,7 +77,7 @@ const Murals = () => {
               <Dimensions mural={mural} />
             </ImageContainer>
             <TextContainer>
-              <MuralDetails>
+              <div>
                 <H4>{mural.title}</H4>
                 {mural.artist_slug && (
                   <Link to={`/artists/${mural.artist_slug}`}>
@@ -86,7 +86,7 @@ const Murals = () => {
                     </H5>
                   </Link>
                 )}
-              </MuralDetails>
+              </div>
               <AddressContainer>
                 <Address>
                   {mural.address1}

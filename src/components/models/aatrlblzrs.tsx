@@ -18,7 +18,6 @@ export function AATraillBlazersModel(props: JSX.IntrinsicElements["group"]) {
   const { nodes } = useGLTF("/AATRLBLZRS GLTF-transformed.glb") as GLTFResult;
   return (
     <group {...props} dispose={null}>
-      <ambientLight position={[10, 10, 5]} intensity={2} castShadow />
       <mesh geometry={nodes.mesh_0.geometry} material={nodes.mesh_0.material} />
     </group>
   );
