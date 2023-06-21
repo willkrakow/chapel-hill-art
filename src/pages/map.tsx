@@ -7,7 +7,6 @@ import List from "../components/common/list";
 import { ListItem, ListItemText } from "../components/common/listItem";
 import { MapContext } from "../contexts/Map";
 import MapService from "../services/Maps";
-import "./threebox.css";
 
 const Container = styled.div`
   min-height: 60vh;
