@@ -117,7 +117,6 @@ const Navbar = () => {
       {navItems.map((item) => (
         <NavItem key={item.path} className={({isActive}) => {
           if (isActive){
-            console.log(item);
             return "active"
           }
         }} to={item.path}>        

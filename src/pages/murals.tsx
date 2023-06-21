@@ -13,6 +13,7 @@ import { TOPOModel } from '../components/models/TOPO';
 import { HandsModel } from '../components/models/HANDS';
 import { BobsModel } from '../components/models/BOBS';
 import { GreenFlowersModel } from '../components/models/GreenFlowers';
+import { LoveWinsModel } from '../components/models/LoveWins';
 
 const Grid = styled.div`
   display: flex;
@@ -51,14 +52,15 @@ interface MuralsLoaderData {
 }
 
 const renderMuralMapping = {
+  1: KingdomModel,
   6: HopeModel,
+  7: HandsModel,
+  8: GreenFlowersModel,
   10: TOPOModel,
   11: FloydCouncilModel,
   12: AATraillBlazersModel,
-  1: KingdomModel,
-  7: HandsModel,
   13: BobsModel,
-  8: GreenFlowersModel,
+  14: LoveWinsModel,
 }
 
 const Murals = () => {
