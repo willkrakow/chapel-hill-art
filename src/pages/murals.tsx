@@ -12,6 +12,7 @@ import Dimensions from '../components/dimensions';
 import { TOPOModel } from '../components/models/TOPO';
 import { HandsModel } from '../components/models/HANDS';
 import { BobsModel } from '../components/models/BOBS';
+import { GreenFlowersModel } from '../components/models/GreenFlowers';
 
 const Grid = styled.div`
   display: flex;
@@ -57,6 +58,7 @@ const renderMuralMapping = {
   1: KingdomModel,
   7: HandsModel,
   13: BobsModel,
+  8: GreenFlowersModel,
 }
 
 const Murals = () => {
