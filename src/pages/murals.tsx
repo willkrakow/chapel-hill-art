@@ -6,7 +6,7 @@ import Address from '../components/common/address';
 import H4 from '../components/common/h4';
 import { HopeModel } from '../components/models/HopeGLTF';
 import { FloydCouncilModel } from '../components/models/FloydCouncil';
-import { AATraillBlazersModel } from '../components/models/aatrlblzrs';
+import { AATraillBlazersModel } from '../components/models/AATRLBLZRS';
 import { KingdomModel } from '../components/models/KingdomGLTF';
 import Dimensions from '../components/dimensions';
 import { TOPOModel } from '../components/models/TOPO';
