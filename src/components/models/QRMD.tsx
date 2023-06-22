@@ -10,7 +10,7 @@ type GLTFResult = GLTF & {
 }
 
 export function QueeramidModel(props: JSX.IntrinsicElements['group']) {
-  const { nodes } = useGLTF('/QRMD.glb') as GLTFResult
+  const { nodes } = useGLTF("/QUEERAMID.glb") as GLTFResult;
   return (
     <group {...props} dispose={null}>
       <group>
@@ -26,4 +26,4 @@ export function QueeramidModel(props: JSX.IntrinsicElements['group']) {
   );
 }
 
-useGLTF.preload('/QRMD.glb')
+useGLTF.preload("/QUEERAMID.glb");
