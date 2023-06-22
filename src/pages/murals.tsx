@@ -4,16 +4,16 @@ import { IMuralJoined } from '../types/murals';
 import H5 from '../components/common/h5';
 import Address from '../components/common/address';
 import H4 from '../components/common/h4';
-import { HopeModel } from '../components/models/HopeGLTF';
-import { FloydCouncilModel } from '../components/models/FloydCouncil';
-import { TraillBlazersModel } from '../components/models/TrailBlazers';
-import { KingdomModel } from '../components/models/KingdomGLTF';
-import Dimensions from '../components/dimensions';
+import { HopeModel } from '../components/models/HOPE';
+import { FloydCouncilModel } from '../components/models/FLYDCNCL';
+import { TraillBlazersModel } from '../components/models/TRLBLZRS';
+import { KingdomModel } from '../components/models/GRMTKNGDM';
+import Mural from '../components/mural';
 import { TOPOModel } from '../components/models/TOPO';
 import { HandsModel } from '../components/models/HANDS';
 import { BobsModel } from '../components/models/BOBS';
-import { GreenFlowersModel } from '../components/models/GreenFlowers';
-import { LoveWinsModel } from '../components/models/LoveWins';
+import { GreenFlowersModel } from '../components/models/GRNFLWRS';
+import { LoveWinsModel } from '../components/models/LVWNS';
 
 const Grid = styled.div`
   display: flex;
@@ -78,7 +78,7 @@ const Murals = () => {
         {withRenders.map((mural) => (
           <Section key={mural.id}>
             <ImageContainer>
-              <Dimensions mural={mural} />
+              <Mural mural={mural} />
             </ImageContainer>
             <TextContainer>
               <div>

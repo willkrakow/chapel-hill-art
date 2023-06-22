@@ -1,4 +1,3 @@
-import * as THREE from "three";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 
@@ -9,8 +8,9 @@ type GLTFResult = GLTF & {
   materials: {};
 };
 
-export function LoveWinsModel(props: JSX.IntrinsicElements["group"]) {
-  const { nodes } = useGLTF("/LOVEWINS.glb") as GLTFResult;
+export function GreenFlowersModel(props: JSX.IntrinsicElements["group"]) {
+  const { nodes } = useGLTF("/GRNFLWRS.glb") as GLTFResult;
+
   return (
     <group {...props} dispose={null}>
       <ambientLight intensity={0.9} castShadow position={[10, -10, 5]} />
@@ -23,4 +23,4 @@ export function LoveWinsModel(props: JSX.IntrinsicElements["group"]) {
   );
 }
 
-useGLTF.preload("/LOVEWINS.glb");
+useGLTF.preload("/GRNFLWRS.glb");

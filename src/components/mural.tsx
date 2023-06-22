@@ -6,12 +6,6 @@ import { createSrcSet } from "../utils/images";
 import { Canvas } from "@react-three/fiber";
 import { CameraControls } from "@react-three/drei";
 
-const Container = styled.div`
-`
-
-const ToggleContainer = styled.div`
-`
-
 const Image = styled.img`
 width: 100%;
 min-height: 60vh;
@@ -22,14 +16,15 @@ object-fit: cover;
 interface Props {
     mural: IMuralJoined & {ThreeDModel?: React.FC};
 }
-const Dimensions = ({mural}: Props) => {
+
+const Mural = ({mural}: Props) => {
     const [currentDimension, setCurrentDimension] = useState(2);
     const containerRef = useRef<HTMLDivElement>(null);
 
     return (
-      <Container ref={containerRef}>
+      <div ref={containerRef}>
         {mural.ThreeDModel && (
-          <ToggleContainer>
+          <div>
             <Button
               style={{ width: "inherit" }}
               active={currentDimension === 2}
@@ -44,7 +39,7 @@ const Dimensions = ({mural}: Props) => {
             >
               3D
             </Button>
-          </ToggleContainer>
+          </div>
         )}
         {currentDimension === 2 && (
           <Image
@@ -64,8 +59,8 @@ const Dimensions = ({mural}: Props) => {
             <mural.ThreeDModel />
           </Canvas>
         )}
-      </Container>
+      </div>
     );
 }
 
-export default Dimensions;
+export default Mural;

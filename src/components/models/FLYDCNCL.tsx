@@ -1,4 +1,4 @@
-import { CameraControls, useGLTF } from '@react-three/drei'
+import { useGLTF } from '@react-three/drei'
 import { GLTF } from "three-stdlib";
 
 type GLTFResult = GLTF & {
@@ -9,13 +9,10 @@ type GLTFResult = GLTF & {
 };
 
 export function FloydCouncilModel(props: JSX.IntrinsicElements["group"]) {
-  const { nodes } = useGLTF(
-    "/Floyd Council GLTF-transformed.glb"
-  ) as GLTFResult;
+  const { nodes } = useGLTF("/FFLYDCNCL.glb") as GLTFResult;
 
   return (
     <group {...props} dispose={null}>
-      <CameraControls />
       <ambientLight intensity={0.9} castShadow position={[10, -10, 5]} />
       <mesh
         receiveShadow
@@ -26,4 +23,4 @@ export function FloydCouncilModel(props: JSX.IntrinsicElements["group"]) {
   );
 }
 
-useGLTF.preload('/Floyd Council GLTF-transformed.glb')
+useGLTF.preload("/FFLYDCNCL.glb");
