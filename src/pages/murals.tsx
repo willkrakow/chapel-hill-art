@@ -15,6 +15,7 @@ import { BobsModel } from '../components/models/BOBS';
 import { GreenFlowersModel } from '../components/models/GRNFLWRS';
 import { LoveWinsModel } from '../components/models/LVWNS';
 import { QueeramidModel } from '../components/models/QRMD';
+import { PortraitModel } from '../components/models/PRTRT';
 
 const Grid = styled.div`
   display: flex;
@@ -54,6 +55,7 @@ interface MuralsLoaderData {
 
 const renderMuralMapping = {
   1: KingdomModel,
+  4: PortraitModel,
   6: HopeModel,
   7: HandsModel,
   8: GreenFlowersModel,
