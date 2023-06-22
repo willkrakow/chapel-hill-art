@@ -14,6 +14,7 @@ import { HandsModel } from '../components/models/HANDS';
 import { BobsModel } from '../components/models/BOBS';
 import { GreenFlowersModel } from '../components/models/GRNFLWRS';
 import { LoveWinsModel } from '../components/models/LVWNS';
+import { QueeramidModel } from '../components/models/QRMD';
 
 const Grid = styled.div`
   display: flex;
@@ -61,6 +62,7 @@ const renderMuralMapping = {
   12: TraillBlazersModel,
   13: BobsModel,
   14: LoveWinsModel,
+  15: QueeramidModel
 };
 
 const Murals = () => {
