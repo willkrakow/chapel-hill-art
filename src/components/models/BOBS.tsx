@@ -1,4 +1,3 @@
-import * as THREE from 'three'
 import { useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 
@@ -10,7 +9,7 @@ type GLTFResult = GLTF & {
 }
 
 export function BobsModel(props: JSX.IntrinsicElements['group']) {
-  const { nodes } = useGLTF('/BOBS-transformed.glb') as GLTFResult
+  const { nodes } = useGLTF('/BOBS.glb') as GLTFResult
   return (
     <group {...props} dispose={null}>
       <group>
@@ -26,4 +25,4 @@ export function BobsModel(props: JSX.IntrinsicElements['group']) {
   );
 }
 
-useGLTF.preload('/BOBS-transformed.glb')
+useGLTF.preload('/BOBS.glb')

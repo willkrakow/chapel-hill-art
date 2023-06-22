@@ -1,4 +1,4 @@
-import { CameraControls, useGLTF } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 
 type GLTFResult = GLTF & {
@@ -8,12 +8,10 @@ type GLTFResult = GLTF & {
   materials: {};
 };
 
-export function GreenFlowersModel(props: JSX.IntrinsicElements["group"]) {
-  const { nodes } = useGLTF("/GRNFLWRS.glb") as GLTFResult;
-
+export function LoveWinsModel(props: JSX.IntrinsicElements["group"]) {
+  const { nodes } = useGLTF("/LVWNS.glb") as GLTFResult;
   return (
     <group {...props} dispose={null}>
-      <CameraControls />
       <ambientLight intensity={0.9} castShadow position={[10, -10, 5]} />
       <mesh
         receiveShadow
@@ -24,4 +22,4 @@ export function GreenFlowersModel(props: JSX.IntrinsicElements["group"]) {
   );
 }
 
-useGLTF.preload("/GRNFLWRS.glb");
+useGLTF.preload("/LVWNS.glb");
