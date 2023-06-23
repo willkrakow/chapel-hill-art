@@ -9,7 +9,7 @@ type GLTFResult = GLTF & {
 };
 
 export function FloydCouncilModel(props: JSX.IntrinsicElements["group"]) {
-  const { nodes } = useGLTF("/FFLYDCNCL.glb") as GLTFResult;
+  const { nodes } = useGLTF("/FLYDCNCL.glb") as GLTFResult;
 
   return (
     <group {...props} dispose={null}>
@@ -23,4 +23,4 @@ export function FloydCouncilModel(props: JSX.IntrinsicElements["group"]) {
   );
 }
 
-useGLTF.preload("/FFLYDCNCL.glb");
+useGLTF.preload("/FLYDCNCL.glb");
