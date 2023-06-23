@@ -9,7 +9,7 @@ type GLTFResult = GLTF & {
 };
 
 export function TraillBlazersModel(props: JSX.IntrinsicElements["group"]) {
-  const { nodes } = useGLTF("/AATRLBLZRS GLTF-transformed.glb") as GLTFResult;
+  const { nodes } = useGLTF("/TRLBLZRS.glb") as GLTFResult;
   return (
     <group {...props} dispose={null}>
       <ambientLight intensity={0.9} castShadow position={[10, -10, 5]} />
@@ -18,4 +18,4 @@ export function TraillBlazersModel(props: JSX.IntrinsicElements["group"]) {
   );
 }
 
-useGLTF.preload('/AATRLBLZRS GLTF-transformed.glb')
+useGLTF.preload('/TRLBLZRS.glb')
