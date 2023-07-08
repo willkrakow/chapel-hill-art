@@ -16,6 +16,8 @@ import { GreenFlowersModel } from '../components/models/GRNFLWRS';
 import { LoveWinsModel } from '../components/models/LVWNS';
 import { QueeramidModel } from '../components/models/QRMD';
 import { PortraitModel } from '../components/models/PRTRT';
+import { BicycleChainModel } from '../components/models/BCYCLCHN';
+import { OpenEyeModel } from '../components/models/OPNEYE';
 
 const Grid = styled.div`
   display: flex;
@@ -64,7 +66,9 @@ const renderMuralMapping = {
   12: TraillBlazersModel,
   13: BobsModel,
   14: LoveWinsModel,
-  15: QueeramidModel
+  15: QueeramidModel,
+  16: BicycleChainModel,
+  17: OpenEyeModel,
 };
 
 const Murals = () => {
