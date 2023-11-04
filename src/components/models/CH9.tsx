@@ -10,7 +10,7 @@ type GLTFResult = GLTF & {
 }
 
 export function ChapelHillNineModel(props: JSX.IntrinsicElements['group']) {
-  const { nodes } = useGLTF('/Ch9-transformed.glb') as GLTFResult
+  const { nodes } = useGLTF('/CH9.glb') as GLTFResult
   return (
     <group {...props} dispose={null}>
       <group>
