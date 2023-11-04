@@ -18,6 +18,7 @@ import { QueeramidModel } from '../components/models/QRMD';
 import { PortraitModel } from '../components/models/PRTRT';
 import { BicycleChainModel } from '../components/models/BCYCLCHN';
 import { OpenEyeModel } from '../components/models/OPNEYE';
+import { ChapelHillNineModel } from '../components/models/CH9';
 
 const Grid = styled.div`
   display: flex;
@@ -69,6 +70,7 @@ const renderMuralMapping = {
   15: QueeramidModel,
   16: BicycleChainModel,
   17: OpenEyeModel,
+  18: ChapelHillNineModel,
 };
 
 const Murals = () => {
